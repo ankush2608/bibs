@@ -1,0 +1,72 @@
+#grocery store
+a=("Welcome to Ankush Grocery Stores")
+print(a)
+
+inp=input("Do you want to buy something? (Yes/No)")
+cart=[]
+cost=0
+    
+while(inp=='Yes'):
+   
+    d={1:"Soap",2:"Shampoo",3:"Toothpaste"}
+    print("Items ->",list(d.items()))
+    inp1=int(input("What do you want to buy from the list? item=>(1/2/3)"))
+    print(d[inp1])
+        
+    if(d[inp1]=="Soap"):
+        d1={"1:Lux":"Rs30","2:Dove":"Rs20","3:Dettol":"Rs40"}
+        print(list(d1.items()))
+        inp2=int(input("Which Soap do you want? item=>(1/2/3)"))
+        if(inp2==1):
+            cost+=30
+            cart.append("Soap->Lux: Rs30")
+        elif(inp2==2):
+            cost+=20
+            cart.append("Soap->Dove: Rs20")
+        elif(inp2==3):
+            cost+=40
+            cart.append("Soap->Dettol: Rs40")
+        
+    elif(d[inp1]=="Shampoo"):
+        d2={"1:Loreal":"Rs50","2:Panteen":"Rs60","3:Clinic Plus":"Rs70"}
+        print(list(d2.items()))
+        inp3=int(input("Which Shampoo do you want? item=>(1/2/3)"))
+        if(inp3==1):
+            cost+=50
+            cart.append("Shampoo->Loreal: Rs50")
+        elif(inp3==2):
+            cost+=60
+            cart.append("Shampoo->Panteen: Rs60")
+        elif(inp3==3):
+            cost+=70
+            cart.append("Shampoo->Clinic Plus: Rs70")
+        
+    elif(d[inp1]=="Toothpaste"):
+        d3={"1:Colgate":"Rs45","2:Pepsodent":"Rs55","3:Sensodyne":"Rs65"}
+        print(list(d3.items()))
+        inp4=int(input("Which Toothpaste do you want? item=>(1/2/3)"))
+        if(inp4==1):
+            cost+=45
+            cart.append("Toothpaste->Colgate: Rs45")
+        elif(inp4==2):
+            cost+=55
+            cart.append("Toothpaste->Pepsodent: Rs55")
+        elif(inp4==3):
+            cost+=65
+            cart.append("Toothpaste->Pepsodent: Rs65")     
+    
+    inp=input("Do you want to buy something more? (Yes/No)")
+    
+    if(inp=="No"):
+        break
+
+ccart=[]
+for i in cart:
+    c=cart.count(i)
+    ccart.append(str(c)+'* '+i)
+s=set(ccart)
+print("------Invoice------")
+for i in s:
+    print(i)
+print("Total cost ","Rs",cost)
+print("Thank you!!!")
